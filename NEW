@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pet Evacuation System</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f7f6;
+text-align:center;
+margin:0;
+}
+
+.container{
+width:360px;
+margin:auto;
+padding:20px;
+}
+
+.header{
+background:white;
+padding:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+margin-bottom:15px;
+}
+
+h1{
+color:#2e7d32;
+}
+
+.shelter{
+background:white;
+padding:15px;
+border-radius:10px;
+margin-bottom:15px;
+box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.pet-card{
+background:white;
+border-radius:10px;
+padding:15px;
+margin-bottom:15px;
+box-shadow:0 0 8px rgba(0,0,0,0.1);
+}
+
+.button{
+background:#2e7d32;
+color:white;
+padding:8px 14px;
+border-radius:5px;
+text-decoration:none;
+display:inline-block;
+margin:5px;
+cursor:pointer;
+}
+
+.status{
+font-weight:bold;
+color:#2e7d32;
+margin-top:5px;
+}
+
+.footer{
+font-size:12px;
+color:#555;
+margin-top:20px;
+}
+
+</style>
+
+<script>
+
+function checkin(id){
+document.getElementById(id).innerText="入所済";
+}
+
+function move(id){
+document.getElementById(id).innerText="移動中";
+}
+
+function checkout(id){
+document.getElementById(id).innerText="退所";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1>ペット避難管理システム</h1>
+<p>Pet Evacuation QR Demo</p>
+</div>
+
+<div class="shelter">
+<h3>避難所A</h3>
+<p>収容可能：10</p>
+<p>現在：2</p>
+<p>空き：8</p>
+</div>
+
+<div class="pet-card">
+
+<h3>PET-001 モモ</h3>
+
+<p>種類：柴犬</p>
+<p>体重：8kg</p>
+
+<p>飼い主：山田太郎</p>
+<p>電話：090-1234-1111</p>
+
+<p class="status" id="status1">未登録</p>
+
+<button class="button" onclick="checkin('status1')">入所</button>
+<button class="button" onclick="move('status1')">移動</button>
+<button class="button" onclick="checkout('status1')">退所</button>
+
+</div>
+
+<div class="pet-card">
+
+<h3>PET-002 レオ</h3>
+
+<p>種類：猫</p>
+<p>体重：4kg</p>
+
+<p>飼い主：佐藤美咲</p>
+<p>電話：090-2222-3333</p>
+
+<p class="status" id="status2">未登録</p>
+
+<button class="button" onclick="checkin('status2')">入所</button>
+<button class="button" onclick="move('status2')">移動</button>
+<button class="button" onclick="checkout('status2')">退所</button>
+
+</div>
+
+<p>
+QRコードをスキャンすると  
+ペット情報を確認できます
+</p>
+
+<div class="footer">
+DEMO SYSTEM – ペット同行避難管理
+</div>
+
+</div>
+
+</body>
+</html>
